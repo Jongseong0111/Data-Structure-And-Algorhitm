@@ -7,6 +7,7 @@
 
 ### Python Basic Grammar
 
+* [Data Type](/`Basic Grammar`/Data-Type.md)
 ### Data Structure
 
 ### Algorithm
