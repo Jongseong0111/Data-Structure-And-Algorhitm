@@ -218,3 +218,91 @@ print(a*3) # output: StringStringString
 a = "ABCDEF"
 print(a[2:4]) # output: CD
 
+## Tuple 자료형
+
+> Tuple은 List와 거의 비슷하지만 한 번 선언된 값을 변경할 수 없고(Immutable), 소괄호(())를 이용한다는 점에서 차이가 있습니다. Tuple은 그래프 알고리즘을 구현할 때 자주 사용됩니다. 예를 들어 우선순위 큐를 활용하는 경우 큐에 한 번 들어간 값은 변경되지 않아야 하기 때문에 Tuple로 구성합니다.
+
+```python
+a = (1, 2)
+print(a) # output: (1, 2)
+a[2] = 7 # output: TypeError: 'tuple' object does not support item assignment
+```
+
+## Dictionary 자료형
+
+### Dictionary 초기화
+
+> Dictionary는 Key와 Value의 쌍을 데이터로 가지는 자료형입니다. Dictionary의 Key값은 Immutable이지만 Value는 Mutable입니다. Python의 Dictionary는 내부적으로 해시 테이블을 이용하므로 기본적으로 Data 검색 및 수정에 있어 O(1)의 시간 복잡도를 가집니다.
+
+```python
+# Dictionary 생성
+data = dict() or {}
+data['이름'] = '임종성'
+data['나이'] = 30
+print(data) # output: {'이름' : 임종성, '나이' : 30}
+
+# Dictionary에 특정 Key값 존재유무 확인
+print(True) if '이름' in data else print(False) # output: True
+```
+
+> Python에서 List, String, Tuple등 원소를 차례대로 반복할 수 있는 자료형을 Iterable 자료형이라 합니다. Iterable Data Type은 원소를 포함하는 컨테이너 역할을 하는 것이 대부분이기에 `in` 문법을 사용할 수 있습니다.
+
+### Dictionary 관련 함수
+
+```python
+data = {'이름' : 임종성, '나이' : 30}
+
+# Key Data만 담은 List
+key_list = data.keys()
+print(key_list) # output: dict_keys(['이름', '나이'])
+
+# Valude Data만 담은 List
+value_list = data.values()
+print(value_list) # output: dict_values(['임종성', 30])
+
+# Value for Key
+[print(data[key]) for key in key_list] # output: 임종성 30
+```
+
+## Set 자료형
+
+### Set 소개
+> Python에서 집합을 처리하기 위해 Set Data Type을 제공합니다. 기본적으로 List나 String을 만들 수 있는데, 집합은 중복을 허용하지 않고 순서가 없다는 특징이 있습니다. 따라서 Indexing을 통해 값을 얻을 수 없습니다.
+
+```python
+# Set 초기화
+data = set([1, 2, 3, 3, 4])
+print(data) # output: {1, 2, 3, 4}
+
+data = {1, 2, 3, 3, 4}
+print(data) # output: {1, 2, 3, 4}
+```
+
+### Set 연산과 함수
+
+> 기본적으로 Set 연산은 합집합, 교집합, 차집합이 있습니다. 
+
+```python
+a = {1, 2, 3, 4, 5}
+b = {3, 4, 5, 6, 7}
+
+# 합집합
+print(a|b) # output: {1, 2, 3, 4, 5, 6, 7}
+# 교집합
+print(a&b) # output: {3, 4, 5}
+# 차집합
+print(a-b) # output: {1, 2}
+
+# 새로운 원소 추가
+a.add(6)
+print(a) # output: {1, 2, 3, 4, 5, 6}
+
+# 새로운 원소 여러개 추가
+a.update([7, 8])
+print(a) # output: {1, 2, 3, 4, 5, 6, 7, 8}
+
+# 특정 원소 제거
+a.remove(3)
+print(a) # output: {1, 2, 4, 5, 6, 7, 8}
+```
+
