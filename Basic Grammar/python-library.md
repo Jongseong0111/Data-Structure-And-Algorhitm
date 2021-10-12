@@ -47,6 +47,56 @@ sorted(list, key = lambda x: x[1], reverse=True)
 print(list) # output: [('b', 3), ('c', 2), ('a', 1)]
 ```
 
+### zip()
+
+> zip() 함수는 여러 개의 Iterable 객체를 인자로 받고 각 개체가 담고 있는 원소를 Tuple 형태로 접근할 수 있는 Iterator를 반환합니다.
+
+```python
+numbers = [1, 2, 3]
+letters = ['A', 'B', 'C']
+
+for pair in zip(numbers, letters):
+    print(pair) # output: (1, 'A'), (2, 'B'), (3, 'C')
+
+for num, let in zip(numbers, letters):
+    print(num let) # output: 1 A 2 B 3 C
+```
+
+위와 같이 `zip()` 함수를 사용하면 옷의 지퍼를 올리는 것처럼 양 측의 데이터를 하나씩 차례로 짝지어줍니다.
+
+이런 특징으로 `zip()` 함수를 활용해 여러 그룹의 데이터를 하나의 루프로 병렬 처리 할 수 있습니다. 예를 들어 아래 코드는 3개의 문자열 글자를 하나씩 출력합니다.
+
+```python
+for num, upper, lower in zip("123", "ABC", "abc"):
+    print(num, upper, lower)
+# output:
+# 1 A a
+# 2 B b
+# 3 C c
+```
+
+#### unzip
+
+> `zip()` 함수로 엮은 데이터를 unzip 하기 위해 unpacking 연산자를 붙여 넘기면 다시 원래의 tuple을 얻을 수 있습니다.
+
+```python
+numbers = [1, 2, 3]
+letters = ['A', 'B', 'C']
+pairs = list(zip(numbers, letters))
+
+numbers, letters = zip(*pairs)
+print(numbers) # output: (1, 2, 3)
+print(letters) # output: ('A', 'B', 'C')
+```
+
+#### Dictionary 변환
+
+```python
+keys = [1, 2, 3]
+values = ["A", "B", "C"]
+dict(zip(keys, values)) # output": {1: 'A', 2: 'B', 3: 'C'}
+```
+
 ## Itertools
 
 > Python에서 반복되는 데이터를 처리하는 기능을 포함하는 라이브러리입니다. **순열과 조합**(Permutations, Combinations)를 다룰 경우 유용하게 사용됩니다.
