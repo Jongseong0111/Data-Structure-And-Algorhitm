@@ -18,3 +18,7 @@
 ### Data Structure
 
 ### Algorithm
+
+- [Greedy](/Algorithm/Greedy)
+
+- [Implementation](/Algorithm/Implementation)
