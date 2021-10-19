@@ -22,3 +22,9 @@
 - [Greedy](/Algorithm/Greedy)
 
 - [Implementation](/Algorithm/Implementation)
+
+- [Dynamic Programming](/Algorithm/Dynamic%20Programming)
+
+- [DFS & BFS](/Algorithm/DFS%20BFS)
+
+- [Binary Search](/Algorithm/Binary%20Search)
