@@ -17,6 +17,8 @@
 
 ### Data Structure
 
+- [Stack Queue](/Data%20Structure/Stack-Queue)
+
 ### Algorithm
 
 - [Greedy](/Algorithm/Greedy)
@@ -28,3 +30,7 @@
 - [DFS & BFS](/Algorithm/DFS%20BFS)
 
 - [Binary Search](/Algorithm/Binary%20Search)
+
+- [Dijkstra Algorithm](/Algorithm/Dijkstra%20Algorithm)
+
+- [Sort](/Algorithm/Sort)
